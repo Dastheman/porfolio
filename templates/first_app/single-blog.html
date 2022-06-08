@@ -1,0 +1,258 @@
+{% extends 'first_app/base.html' %} {%load static%}
+<!DOCTYPE html>
+{% block title %}register {% endblock %} {% block content %}
+    <title>lifeleck BLOG || HOME</title>
+
+
+  <body>
+   
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg align-items-center">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-sm-6">
+            <div class="breadcrumb_tittle text-left">
+              <h2>blog details</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="breadcrumb_content text-right">
+              <p>Home<span>/</span>blog details</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area all_post section_padding">
+      <div class="container">
+        <div class="row">
+       
+          <div class="col-lg-8 posts-list">
+            {% if blog_detail %}
+
+            <h2>{{ blog_detail.title}}</h2>
+            <div class="single-post">
+              <div class="feature-img">
+                <img
+                  class="img-fluid"
+                  src="{{ blog_detail.image.url }}"
+                  alt=""
+                />
+              </div>
+              <div class="blog_details">
+                <h2>
+                 Posted by : {{ blog_detail.name}}
+                </h2>
+              
+                <p class="excert">
+                  {{ blog_detail.body}}
+                </p>
+                
+              </div>
+            </div>
+            {% endif %}
+            
+           <div class="navigation-top">
+              <div class="d-sm-flex justify-content-between text-center">
+                <p class="like-info">
+                  <span class="align-middle"><i class="far fa-heart"></i></span>
+                  Lily and 4 people like this
+                </p>
+                <div class="col-sm-4 text-center my-2 my-sm-0">
+                  <!-- <p class="comment-count"><span class="align-middle"><i class="far fa-comment"></i></span> 06 Comments</p> -->
+                </div>
+                <ul class="social-icons">
+                  <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navigation-area">
+                <div class="row">
+                  <div
+                    class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center"
+                  >
+                    
+                    <div class="arrow">
+                      <a href="#">
+                        <span class="text-white ti-arrow-left"></span>
+                      </a>
+                    </div>
+                   
+                    <div class="arrow">
+                      <a href="#">
+                        <span class="text-white ti-arrow-right"></span>
+                      </a>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+            <div class="comments-area">
+              <h4>Comments</h4>
+                 
+              <div class="comment-list">
+               {% if comm %}
+               {% for c in comm %}
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                    <div class="thumb">
+                      <img
+                        src="{% static 'first_app/img/comment/comment_1.png' %}"
+                        alt=""
+                      />
+                    </div>
+                    <div class="desc">
+                     
+                     <p>{{c.body}}</p>
+                    
+                    
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                          <h5>
+                            
+                            <a href="#">{{c.name}}</a>
+                            
+                          </h5>
+                          <p class="date">{{c.created_on}}</p>
+                        </div>
+                       
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+              </div>
+          
+              
+            </div>
+            <div class="comment-form">
+              <h4>Leave a Reply</h4>
+              <form
+               method="post"
+              >
+              
+              
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                     {{form.body}}
+                    
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                     {{form.name}}
+                     
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                     {{form.email}}
+                     
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="load_btn">
+                  <button type="submit" class="btn_1">SUBMIT </button>
+                </div>
+                {% csrf_token %}
+              </form>
+            </div>
+          </div>
+          
+          <div class="col-lg-4">
+            <div class="sidebar_widget">
+              <div class="single_sidebar_wiget search_form_widget">
+                <form action="#">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search Keyword"
+                      onfocus="this.placeholder = ''"
+                      onblur="this.placeholder = 'Search Keyword'"
+                    />
+                    <div class="btn_1">search</div>
+                  </div>
+                </form>
+              </div>
+              
+              <div class="single_sidebar_wiget">
+                <div class="sidebar_tittle">
+                  <h3>Popular Feeds</h3>
+                </div>
+                <div class="single_catagory_post post_2">
+                  <div class="category_post_img">
+                    <img
+                      src="{% static 'first_app/img/sidebar/sidebar_1.png' %}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="post_text_1 pr_30">
+                    <a href="single-blog.html">
+                      <h3>Subdue lesser beast winged bearing meat tree one</h3>
+                    </a>
+                    <p><span> By Michal</span> / March 30</p>
+                  </div>
+                </div>
+                <div class="single_catagory_post post_2">
+                  <div class="category_post_img">
+                    <img
+                      src="{% static 'first_app/img/sidebar/sidebar_2.png' %}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="post_text_1 pr_30">
+                    <a href="single-blog.html">
+                      <h3>Subdue lesser beast winged bearing meat tree one</h3>
+                    </a>
+                    <p><span> By Michal</span> / March 30</p>
+                  </div>
+                </div>
+                <div class="single_catagory_post post_2">
+                  <div class="category_post_img">
+                    <img
+                      src="{% static 'first_app/img/sidebar/sidebar_3.png' %}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="post_text_1 pr_30">
+                    <a href="single-blog.html">
+                      <h3>Subdue lesser beast winged bearing meat tree one</h3>
+                    </a>
+                    <p><span> By Michal</span> / March 30</p>
+                  </div>
+                </div>
+              </div>
+
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    
+
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'backend/base.html' %} {%load static%}
+<!DOCTYPE html>
+{% block title %} {% endblock %} {% block content %}
+
+<body>
+    <div>
+        <h2>View Post</h2> <br>
+        <h3> {{post.title}}</h3> <br>
+        <img src="{{ post.image.url }}" class="img-fluid w-50 h-50" alt="">
+        <p>{{post.description}}</p>
+    </div>
+    <button><a href="{% url 'backend:viewblog'%}">Back</a></button>
+</body>
+
+{% endblock %}

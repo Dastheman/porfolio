@@ -1,0 +1,313 @@
+{% extends 'first_app/base.html' %} 
+{%load static%}
+<!DOCTYPE html>
+{% block title %} contactme {% endblock %} {% block content %} 
+      <div class="background">
+        <div>
+          <h2>GO HARD OR GO HOME</h2>
+          <h5>
+            Nice-looking body and powerful organism are interconnected – and we
+            can help you with both.
+          </h5>
+        </div>
+       <button style="border-radius: 50px" class="btn btn-danger btn-lg">
+          GET STARTED
+        </button>
+      </div>
+    
+
+    <div>
+      <h1 style="text-align: center">OUR PROGRAMS</h1>
+      <div class="sec2" data-aos="zoom-in"
+      data-aos-delay="250">
+        <div id="box1" class="thumbnail-custom-variant-3">
+          <h2>BODY BUILDING</h2>
+          <p>The discipline of bodybuilding may be harsh, but it pays off...</p>
+          <button
+            style="border-radius: 50px"
+            class="btn btn-outline-light btn-lg"
+          >
+            READ MORE
+          </button>
+        </div>
+        <div class="box2">
+          <h2>YOGA</h2>
+          <p>
+            Yoga classes are a great way to unwind and develop your mind and
+            body.
+          </p>
+          <button
+            style="border-radius: 50px"
+            class="btn btn-outline-light btn-lg"
+          >
+            READ MORE
+          </button>
+        </div>
+        <div class="box3">
+          <h2>FITNESS</h2>
+          <p>
+            Our fitness and CrossFit program is designed for universal
+            scalability..
+          </p>
+          <button
+            style="border-radius: 50px"
+            class="btn btn-outline-light btn-lg"
+          >
+            READ MORE
+          </button>
+        </div>
+        <div class="box4" >
+          <h2>BOXING</h2>
+          <p>
+            You will have the guidance and motivational support from our boxing
+            trainers.
+          </p>
+          <button
+            style="border-radius: 50px"
+            class="btn btn-outline-light btn-lg"
+          >
+            READ MORE
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="section3">
+      <div class="choose">
+        <h2 style="color: white">WHY CHOOSE US</h2>
+        <p style="color: white">
+          Our facility offers a lot of advantages for your CrossFit and fitness
+          practice. Across our 20,000 sq.ft. gym space you'll surely have more
+          than enough room for training!
+        </p>
+      </div>
+      <div class="prices">
+        <div style="padding-right: 100px; padding-left: 70px">
+          <h1>2349 <sup>SQ.FT</sup></h1>
+          <hr style="width: 50%; color: red; border: 2px solid" />
+          <p style="color: white">Comfortable Gym Space</p>
+        </div>
+        <div style="padding-right: 100px">
+          <h1>14</h1>
+          <hr style="width: 50%; color: red; border: 2px solid" />
+          <p style="color: white">Professional Trainers</p>
+        </div>
+        <div style="padding-right: 100px">
+          <h1><sup>$</sup>0</h1>
+          <hr style="width: 50%; color: red; border: 2px solid" />
+          <p style="color: white">First Workout - is Free</p>
+        </div>
+        <div style="padding-right: 100px">
+          <h1>100 <sup>%</sup></h1>
+          <hr style="width: 50%; color: red; border: 2px solid" />
+          <p style="color: white">Happy Clients</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="coach">
+        <h1><strong> COACHES </strong></h1>
+        <p style="color: gray;">
+          These people are responsible for your growth. They work for result, in
+          order to assist you and to make YOU stronger!
+        </p>
+      </div>
+      <div class="coachflex">
+        <div class="card" style="width: 200px; margin-left: 50px">
+          <img
+            src="{% static 'first_app/photos/manbxx.jpg' %}"
+            class="card-img-top img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">REY FERRIGNO</h5>
+            <p>boxing</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 200px; margin-left: 50px">
+          <a href="">
+            <img
+              src="{% static 'first_app/photos/asian.jpg' %}"
+              class="card-img-top img-fluid"
+              alt="..."
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">SONIA MILLER</h5>
+            <p>Pilates, Yoga</p>
+          </div>
+        </div>
+        <div class="card" style="width: 200px; margin-left: 50px">
+          <img
+            src="{% static 'first_app/photos/wommmm.jpg' %}"
+            class="card-img-top img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 style="width: 200px" class="card-title">EMMA ROBINSON</h5>
+            <p>fitness</p>
+          </div>
+        </div>
+
+        <div
+          id="container"
+          class="card"
+          style="width: 200px; margin-left: 50px"
+        >
+          <img
+            src="{% static 'first_app/photos/womangym.jpg' %}"
+            class="card-img-top img-fluid"
+            alt="..."
+          />
+          
+          <div class="card-body">
+            <h5 style="width: 300px" class="card-title">DENNIS TINERINO</h5>
+            <p style="width: 200px">Powerlifting,Bodybuilding</p>
+          </div>
+        </div>
+      </div>
+      <div class="comments">
+        <div class=" pb-5">
+          <div style="text-align: center">
+            <h1 class="mt-5">WHAT PEOPLE SAY</h1>
+          </div>
+          <div class="row" style="margin-left: 50px; margin-top: 10%">
+            <div class="col-lg-3 section4 ml-5">
+              <p>
+                I began attending this CrossFit and fitness studio just few
+                months after my pregnancy ended. I still had an extra weight
+                problem then. But coaches helped me to bounce back and get to
+                the top of my physical shape again! I'm so grateful
+              </p>
+              <div style="display: flex;"><img class="rounded-circle" style="height:70px ; width: 70px;" src="{% static 'first_app/photos/profile1.jpg' %}" alt="">
+            <div><h4 style="width: 200px;">Nickie O'Malley</h4>
+            <p>August 2016</p>
+            </div>
+            </div>
+            </div>
+            <div class="col-lg-3 section4 ml-5">
+              <p>
+                FitnessSport is the best place for fitness workout. It's a truly
+                inspiring team of fitness professionals. They are able to spread
+                the love for what they teach to everyone. Their abilities and
+                enthusiasm are just overwhelming!
+              </p>
+              <div style="display: flex; padding-top: 25px;"><img class="rounded-circle" style="height:70px ; width: 70px;" src="{% static 'first_app/photos/profile2.png' %}" alt="">
+                <div><h4 style="width: 200px;">Gary Lewis</h4>
+                <p>January 2016</p>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3 section4 ml-5">
+              <p>
+                Since I started CrossFit classes at this gym, my self-confidence
+                has risen significantly. I can do dozens more of push-ups and
+                lifts than ever before. Now I'm absolutely hooked up for a
+                healthy lifestyle and a life full of physical activity!
+              </p>
+              <div style="display: flex; "><img class="rounded-circle" style="height:70px ; width: 70px;" src="{% static 'first_app/photos/profile1.jpg' %}" alt="">
+                <div><h4 style="width: 200px;">Ann Smith</h4>
+                <p>February 2016</p>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="downmenu">
+      <div class="row">
+        <div style="padding-left: 50px;" class="col-lg-3">
+          <h5>ABOUT US</h5>
+          <p>
+            Our gym is a perfect place for everyone to enjoy sports,
+            bodybuilding, and fitness. With us youcan reach your top physical
+            condition!
+          </p>
+         <div class="linker"> <a href="#"><img style="height: 35px; width: 35px;" src="{% static 'first_app/photos/IG.png' %}" alt=""></a>
+        <a href="#"><img style="height: 35px; width: 35px;" src="{% static 'first_app/photos/twitter.png' %}" alt=""></a>
+          <a href="#"><img style="height: 35px; width: 35px;" src="{% static 'first_app/photos/google-plus.png' %}" alt=""></a>
+         </div>
+         
+        </div>
+        
+        <div class="col-lg-3">
+          <h5>CONTACT US</h5>
+          <div style="display: flex">
+            <img
+              style="margin-right: 20px; width: 50px; height: 50px"
+              src="{% static 'first_app/photos/placeholder (1).png' %}"
+              alt="location"
+            />
+
+            <a class="footerlink" href="#"
+              >818 Noe Street San Francisco, CA 94114</a
+            >
+          </div>
+          <div style="margin-top: 20px; display: flex">
+            <div>
+              <img
+                style="margin-right: 20px; width: 50px; height: 50px"
+                src="{% static 'first_app/photos/smartphone.png' %}"
+                alt="phone"
+              />
+            </div>
+            <div style="width: px">
+              <p>+1 (409) 987–5874 —Office</p>
+              <p>+1 (409) 987–5874 —Fax</p>
+            </div>
+          </div>
+          <div style="display: flex;">
+          <div>
+            <img
+              style="margin-right: 20px; width: 50px; height: 50px"
+              src="{% static 'first_app/photos/email.png' %}"
+              alt=""
+            />
+            <a class="footerlink2"  " href="#">	
+              info@demolink.org</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+       <h5> OPENING HOURS</h5>
+       <div style="display: flex;">
+        <p>Monday</p>
+        <p style="padding-left: 73px;"> 8 am–10 pm</p>
+      </div>
+       <div style="display: flex;">
+        <p>Wednesday</p>
+        <p style="padding-left: 50px;"> 8 am–10 pm</p>
+      </div>
+       <div style="display: flex;">
+        <p>Friday</p>
+        <p style="padding-left: 89px;"> 8 am–10 pm</p>
+      </div>
+       <div style="display: flex;">
+        <p>Saturday</p>
+        <p style="padding-left: 70px;"> 8 am–5 pm</p>
+      </div>
+       <div style="display: flex;">
+        <p>Sunday</p>
+        <p style="padding-left: 82px;">Closed</p>
+      </div>
+      </div>
+      <div class="col-lg-3">
+        <h5>RECENT POSTS</h5>
+        <div class="icon"  style="display: flex;">
+          <div><img class="rounded" src="{% static 'first_app/photos/icongym.jpg' %}" style="width: 70px; height: 70px;" alt=""></div>
+         <div> <a style=" display: inline;color: white; text-decoration: none; padding-left: 20px;" href="#"> The dos and donts of <br> running  for fitness</a>
+            <p style="padding-left: 25px; color: gray; font-size: small;">Feb 4, 2016 / 4 Comments</p>
+          </div>
+          
+        </div>
+        <div class="icon"  style="display: flex;">
+          <div><img class="rounded" src="{% static 'first_app/photos/fruits.jpg' %}" style="width: 70px; height: 70px;" alt=""></div>
+         <div> <a style=" display: inline;color: white; text-decoration: none; padding-left: 20px;" href="#"> 	
+          Get six-pack abs like the guys in ‘Magic Mike’</a>
+            <p style="padding-left: 25px; color: gray; font-size: small;">Feb 4, 2016 / 4 Comments</p>
+          </div>
+      </div>
+      
+    </div>
+    {% endblock %}
