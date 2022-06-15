@@ -1,4 +1,4 @@
-{% extends 'first_app/base.html' %} {%load static%}
+{% extends 'first_app/base.html' %} {% load static %}
 <!DOCTYPE html>
 {% block title %}register {% endblock %} {% block content %}
         <link
@@ -26,7 +26,7 @@
                 <h6 class="card-text" style="color: blue;">Posted By: <span style="text-transform: capitalize;">{{blog.poster}}</span> </h6>
                 <p class="card-text">{{blog.email}}</p>
                 <button class="btn btn-success">
-                  <a href="{% url 'secondblog' blog.id %}">details</a>
+                  <a style="color:black;" href="{% url 'secondblog' blog.id %}">details</a>
                 </button>
               </div>
             </div>

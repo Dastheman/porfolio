@@ -48,10 +48,10 @@ class AddBlogForm(forms.ModelForm):
   image = forms.ImageField(required=False, widget=forms.FileInput(attrs={'class': 'form-control','placeholder':'Upload your picture',}))
   body = forms.CharField(label='Content :', widget=forms.Textarea(attrs={'class': 'form-control','placeholder':'Enter content', 'style':"width: 100%; height: 150px"}))
   
-
+ 
   class Meta():
     model = Blog
-    fields = ['title','image','body', 'poster']
+    fields = ['title','image','body']
 
 
 class EditProfileForm(forms.ModelForm):

@@ -19,8 +19,9 @@ from django.urls import path, include
 from first_app import views
 from django.conf.urls.static import static
 from django.conf import settings
-from first_app.models import Blog
+from first_app.models import Blog,Services
 from django.contrib.auth import views as auth_views
+
 
 
 urlpatterns = [
@@ -29,8 +30,8 @@ urlpatterns = [
     path('blog/', views.blogform, name='blog'),
     path('base/', views.base, name='base'),
     path('portfolio/', views.portfolio, name='portfolio'),
-    path('services/', views.services, name='services'),
     path('list_blog/', views.ListBlog.as_view(model=Blog), name='list_blog'),
+    path('services/', views.Serve.as_view(model=Services), name='services'),
     # path('product_detail/<int:pk>', views.ProductDetail, name='blog_detail'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),

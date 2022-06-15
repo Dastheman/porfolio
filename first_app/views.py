@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from first_app.forms import Blogform ,RegForm, CommentForm, Contactform
 from django.views.generic import ListView , DetailView
-from first_app.models import Blog,Comment,Contact
+from first_app.models import Blog,Comment,Contact,Services
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login,authenticate
@@ -39,7 +39,7 @@ def register(request):
     register_form = RegForm(request.POST)
     if register_form.is_valid():
         register_form.save()
-        return redirect('backend/login')
+        return redirect('backend:login')
   else:
     register_form = RegForm()
   return render(request, 'first_app/register.html', {'reg':register_form})
@@ -69,9 +69,15 @@ class ListBlog(ListView):
   template_name = 'first_app/list.html'
   context_object_name ='list_blog'
 
+class Serve(ListView):
+  model = Services
+  template_name = 'first_app/services.html'
+  context_object_name ='list_services'
+
 def secondblog(request, pk):
     detail_post = get_object_or_404(Blog, pk=pk)
     comm = Comment.objects.filter(post=pk).order_by('-created_on')
+    most_recent = Blog.objects.order_by('-created_on')[:3]
     # Comment posted
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -83,4 +89,4 @@ def secondblog(request, pk):
          
     else:
       form = CommentForm()
-      return render(request,'first_app/single-blog.html', {'comm':comm, 'form':form,  'blog_detail':detail_post})
+      return render(request,'first_app/single-blog.html', {'comm':comm, 'form':form,'most_recent':most_recent,  'blog_detail':detail_post})

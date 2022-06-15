@@ -25,12 +25,12 @@ class RegForm(UserCreationForm):
     last_name = forms.CharField(required=False, widget=forms.TextInput(
         attrs={'class': 'form-control', 'placeholder': 'Enter Lastname'}))
     password1 = forms.CharField(label='Enter Password :', widget=forms.PasswordInput(
-        attrs={'class': 'form-control', 'placeholder': 'Enter Password'}))
+        attrs={'class': 'form-control', 'placeholder': 'Enter Password' }))
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(
         attrs={'class': 'form-control', 'placeholder': 'Enter Password'}))
-    gender = forms.CharField(widget=forms.RadioSelect(choices=GENDER_CHOICES))
+   
     botfield = forms.CharField(required=False, widget=forms.HiddenInput(),
-                               validators=[validators.MaxLengthValidator(0)])
+                               validators=[validators.MaxLengthValidator(0)] )
 
     def clean_email(self):
         email_field = self.cleaned_data.get('email')
@@ -53,7 +53,7 @@ class Blogform(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     name = forms.CharField(label='name :', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter name' ,'style':'width:200px;'}))
     email = forms.CharField(label='email :', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter email' ,'style':'width:200px;'}))
-    body = forms.CharField(label='content :',widget=forms.TextInput(attrs={'class': 'form-control', 'style':'width:800px;height:200px; '}))
+    body = forms.CharField(label='content :',widget=forms.TextInput(attrs={'class': 'form-control', 'style':'width:600px;height:200px; '}))
     
     
     class Meta:

@@ -35,3 +35,11 @@ class Comment(models.Model):
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)
 
+class Services(models.Model):
+    services_image = models.ImageField(null=True ,blank=True , upload_to='uploads/pics')
+    services_title = models.CharField(max_length=25)
+    services_body = models.TextField()
+
+
+    def __str__(self):
+        return self.services_title
